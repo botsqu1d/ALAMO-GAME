@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c23a1rmwsowrm"]
+
+[ext_resource type="PackedScene" uid="uid://bxagjckwhivpi" path="res://Assets/18pnd cannon col.blend" id="1_ukf6g"]
+
+[node name="18pnd cannon col" instance=ExtResource("1_ukf6g")]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://moh0kneqlnpt"]
+[gd_scene load_steps=8 format=3 uid="uid://moh0kneqlnpt"]
 
+[ext_resource type="Texture2D" uid="uid://cq863odof1g8v" path="res://Assets/textures/texture_01.png" id="1_gvn5r"]
 [ext_resource type="PackedScene" uid="uid://gm4l1catwqj2" path="res://Scenes/alamo_4.tscn" id="1_ilgbr"]
 [ext_resource type="PackedScene" uid="uid://bb8865dyaan5g" path="res://Scenes/player.tscn" id="1_rtblg"]
 
@@ -18,6 +19,13 @@ background_mode = 2
 sky = SubResource("Sky_4o0da")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aw4uc"]
+albedo_texture = ExtResource("1_gvn5r")
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
 
 [node name="main" type="Node3D"]
 
@@ -40,14 +48,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239014, 0, -0.264496)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(168.312, 0, 0, 0, 2.15566, 0, 0, 0, 168.312, 0, -1.05254, 0)
+material_override = SubResource("StandardMaterial3D_aw4uc")
 use_collision = true
 
 [node name="alamo4" parent="Stage" instance=ExtResource("1_ilgbr")]
 
-[node name="alamo" parent="Stage/alamo4" index="2"]
+[node name="alamo" parent="Stage/alamo4" index="4"]
 layers = 1
 
 [node name="Player" parent="." instance=ExtResource("1_rtblg")]
 transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, -0.007586, -0.281592, 12.8764)
 
 [editable path="Stage/alamo4"]
+[editable path="Stage/alamo4/treescol"]
+[editable path="Stage/alamo4/treescol2"]
