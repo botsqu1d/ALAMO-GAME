@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gm4l1catwqj2"]
+
+[ext_resource type="PackedScene" uid="uid://551w88qnuob1" path="res://Assets/alamo4.blend" id="1_jwiwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06cvy"]
+disable_fog = true
+albedo_color = Color(0.796703, 0.620694, 0.507921, 1)
+metallic_specular = 0.0
+roughness = 0.1
+uv1_triplanar = true
+
+[node name="alamo4" instance=ExtResource("1_jwiwn")]
+
+[node name="alamo" parent="." index="2"]
+layers = 4
+material_override = SubResource("StandardMaterial3D_06cvy")
+gi_mode = 2
+gi_lightmap_scale = 1

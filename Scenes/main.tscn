@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://moh0kneqlnpt"]
+
+[ext_resource type="PackedScene" uid="uid://gm4l1catwqj2" path="res://Scenes/alamo_4.tscn" id="1_ilgbr"]
+[ext_resource type="PackedScene" uid="uid://bb8865dyaan5g" path="res://Scenes/player.tscn" id="1_rtblg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4qoq"]
+sky_top_color = Color(1.92523e-07, 0.282369, 0.355272, 1)
+sky_horizon_color = Color(0.75, 0.820592, 0.838818, 1)
+sky_energy_multiplier = 0.35
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.75, 0.820592, 0.838818, 1)
+
+[sub_resource type="Sky" id="Sky_4o0da"]
+sky_material = SubResource("ProceduralSkyMaterial_x4qoq")
+
+[sub_resource type="Environment" id="Environment_flujk"]
+background_mode = 2
+sky = SubResource("Sky_4o0da")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.29404, -0.651849, -0.699023, 0, 0.731354, -0.681998, 0.955793, 0.200535, 0.215048, 0, 0, 0)
+light_color = Color(0.972549, 0.670588, 0, 1)
+light_energy = 1.444
+light_indirect_energy = 1.556
+light_volumetric_fog_energy = 2.125
+light_angular_distance = 51.25
+light_cull_mask = 4294966273
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_flujk")
+
+[node name="env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239014, 0, -0.264496)
+
+[node name="Stage" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(168.312, 0, 0, 0, 2.15566, 0, 0, 0, 168.312, 0, -1.05254, 0)
+use_collision = true
+
+[node name="alamo4" parent="Stage" instance=ExtResource("1_ilgbr")]
+
+[node name="alamo" parent="Stage/alamo4" index="2"]
+layers = 1
+
+[node name="Player" parent="." instance=ExtResource("1_rtblg")]
+transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, -0.007586, -0.281592, 12.8764)
+
+[editable path="Stage/alamo4"]

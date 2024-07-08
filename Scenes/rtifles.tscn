@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2vcrsc8irfk6"]
+
+[ext_resource type="PackedScene" uid="uid://bc5fqq0weh5o3" path="res://Assets/rtifles.blend" id="1_83pdk"]
+
+[node name="rtifles" instance=ExtResource("1_83pdk")]
+
+[node name="Riflestock" parent="." index="0"]
+layers = 4
+
+[node name="riflebarrel" parent="." index="1"]
+layers = 4
+
+[node name="riflerod" parent="." index="2"]
+layers = 4
+
+[node name="riflestrike" parent="." index="3"]
+layers = 4
+
+[node name="gunpowderholderrifle" parent="." index="4"]
+layers = 4

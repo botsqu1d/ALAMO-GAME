@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dercwguae7ov1"]
+
+[ext_resource type="PackedScene" uid="uid://sevds2cyxdo6" path="res://Assets/Humanhands.blend" id="1_gidpw"]
+[ext_resource type="PackedScene" uid="uid://b2vcrsc8irfk6" path="res://Scenes/rtifles.tscn" id="2_a1o2a"]
+
+[node name="Rifle" type="Node3D"]
+transform = Transform3D(0.998895, -1.16415e-09, 0.0470018, 0.00307243, 0.997861, -0.0652961, -0.0469013, 0.0653683, 0.996758, 0.50544, 0.156302, -1.35914)
+
+[node name="Humanhands" parent="." instance=ExtResource("1_gidpw")]
+transform = Transform3D(-0.0568759, -0.126835, -0.148613, -0.165481, -0.0510153, 0.106871, -0.103871, 0.150725, -0.0888859, -0.267901, -0.275696, 0.874485)
+
+[node name="Body_001" parent="Humanhands" index="0"]
+transform = Transform3D(0.998958, 0.038339, 0.0247668, -0.0405424, 0.994592, 0.0956238, -0.0209668, -0.0965285, 0.995109, -1.04681, 0.969864, 0.452148)
+layers = 2
+
+[node name="rtifles" parent="." instance=ExtResource("2_a1o2a")]
+transform = Transform3D(0.465251, 0.00141909, -0.0325026, 0, 0.465944, 0.0203435, 0.0325335, -0.020294, 0.464808, -0.371371, -0.344466, 0.667146)
+
+[node name="Riflestock" parent="rtifles" index="0"]
+transform = Transform3D(1, -1.73168e-09, -4.65661e-09, -1.60071e-10, 1, -5.58794e-09, 9.31323e-10, -1.86265e-09, 1, -0.000714153, 0.0030542, -0.00121725)
+layers = 2
+
+[node name="riflebarrel" parent="rtifles" index="1"]
+layers = 2
+
+[node name="riflerod" parent="rtifles" index="2"]
+layers = 2
+
+[node name="riflestrike" parent="rtifles" index="3"]
+layers = 2
+
+[node name="gunpowderholderrifle" parent="rtifles" index="4"]
+layers = 2
+
+[editable path="Humanhands"]
+[editable path="rtifles"]
