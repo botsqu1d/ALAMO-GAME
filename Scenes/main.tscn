@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://moh0kneqlnpt"]
+[gd_scene load_steps=9 format=3 uid="uid://moh0kneqlnpt"]
 
 [ext_resource type="Texture2D" uid="uid://cq863odof1g8v" path="res://Assets/textures/texture_01.png" id="1_gvn5r"]
 [ext_resource type="PackedScene" uid="uid://gm4l1catwqj2" path="res://Scenes/alamo_4.tscn" id="1_ilgbr"]
 [ext_resource type="PackedScene" uid="uid://bb8865dyaan5g" path="res://Scenes/player.tscn" id="1_rtblg"]
+[ext_resource type="PackedScene" uid="uid://c23a1rmwsowrm" path="res://Scenes/18_pnd_cannon_col.tscn" id="3_jm6pa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4qoq"]
 sky_top_color = Color(1.92523e-07, 0.282369, 0.355272, 1)
@@ -56,8 +57,11 @@ use_collision = true
 [node name="alamo" parent="Stage/alamo4" index="4"]
 layers = 1
 
+[node name="18pnd cannon col" parent="Stage" instance=ExtResource("3_jm6pa")]
+transform = Transform3D(-1.84735, 0, -0.186116, 0, 1.8567, 0, 0.186116, 0, -1.84735, 59.5726, 3.0076, 25.765)
+
 [node name="Player" parent="." instance=ExtResource("1_rtblg")]
-transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, -0.007586, -0.281592, 12.8764)
+transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, 61.1289, 2.74808, 23.2867)
 
 [editable path="Stage/alamo4"]
 [editable path="Stage/alamo4/treescol"]

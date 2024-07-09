@@ -40,8 +40,5 @@ material_override = SubResource("StandardMaterial3D_06cvy")
 gi_mode = 2
 gi_lightmap_scale = 1
 
-[node name="CollisionShape3D" parent="@StaticBody3D@103474" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602522, -0.273109, 0.582584)
-
 [editable path="treescol"]
 [editable path="treescol2"]
