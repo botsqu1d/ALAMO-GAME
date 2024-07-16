@@ -28,7 +28,7 @@ var sprinting = false
 var crouching = false
 var freelook = false
 #headbobbing vars
-const head_bobbing_sprinting_speed = 20.0
+const head_bobbing_sprinting_speed = 50.0
 const head_bobbing_walking_speed = 10.0
 const head_bobbing_crouching_speed = 6.0
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://moh0kneqlnpt"]
+[gd_scene load_steps=11 format=3 uid="uid://moh0kneqlnpt"]
 
 [ext_resource type="Texture2D" uid="uid://cq863odof1g8v" path="res://Assets/textures/texture_01.png" id="1_gvn5r"]
 [ext_resource type="PackedScene" uid="uid://gm4l1catwqj2" path="res://Scenes/alamo_4.tscn" id="1_ilgbr"]
 [ext_resource type="PackedScene" uid="uid://bb8865dyaan5g" path="res://Scenes/player.tscn" id="1_rtblg"]
 [ext_resource type="PackedScene" uid="uid://c23a1rmwsowrm" path="res://Scenes/18_pnd_cannon_col.tscn" id="3_jm6pa"]
+[ext_resource type="Texture2D" uid="uid://dgmxeqn1ba60p" path="res://Assets/textures/wall.png" id="3_knlf1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4qoq"]
 sky_top_color = Color(1.92523e-07, 0.282369, 0.355272, 1)
@@ -27,6 +28,16 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 uv2_triplanar = true
 uv2_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nefav"]
+diffuse_mode = 2
+specular_mode = 2
+albedo_texture = ExtResource("3_knlf1")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(-0.315, -0.315, -0.315)
+uv1_offset = Vector3(0.48, 0.53, 0)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [node name="main" type="Node3D"]
 
@@ -53,15 +64,22 @@ material_override = SubResource("StandardMaterial3D_aw4uc")
 use_collision = true
 
 [node name="alamo4" parent="Stage" instance=ExtResource("1_ilgbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11743, 0, 47.205)
 
-[node name="alamo" parent="Stage/alamo4" index="4"]
-layers = 1
+[node name="Plane_002" parent="Stage/alamo4" index="9"]
+visible = false
+
+[node name="Plane_007" parent="Stage/alamo4" index="10"]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.533928, 0, -36.9568)
+
+[node name="Plane_008" parent="Stage/alamo4" index="14"]
+material_override = SubResource("StandardMaterial3D_nefav")
 
 [node name="18pnd cannon col" parent="Stage" instance=ExtResource("3_jm6pa")]
 transform = Transform3D(-1.84735, 0, -0.186116, 0, 1.8567, 0, 0.186116, 0, -1.84735, 59.5726, 3.0076, 25.765)
 
 [node name="Player" parent="." instance=ExtResource("1_rtblg")]
-transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, 61.1289, 2.74808, 23.2867)
+transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, -26.5538, 2.74808, 12.9706)
 
 [editable path="Stage/alamo4"]
 [editable path="Stage/alamo4/treescol"]
