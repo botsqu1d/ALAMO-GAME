@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://moh0kneqlnpt"]
+[gd_scene load_steps=27 format=3 uid="uid://moh0kneqlnpt"]
 
 [ext_resource type="Texture2D" uid="uid://cq863odof1g8v" path="res://Assets/textures/texture_01.png" id="1_gvn5r"]
 [ext_resource type="PackedScene" uid="uid://gm4l1catwqj2" path="res://Scenes/alamo_4.tscn" id="1_ilgbr"]
 [ext_resource type="PackedScene" uid="uid://bb8865dyaan5g" path="res://Scenes/player.tscn" id="1_rtblg"]
 [ext_resource type="PackedScene" uid="uid://c23a1rmwsowrm" path="res://Scenes/18_pnd_cannon_col.tscn" id="3_jm6pa"]
 [ext_resource type="Texture2D" uid="uid://dgmxeqn1ba60p" path="res://Assets/textures/wall.png" id="3_knlf1"]
+[ext_resource type="Texture2D" uid="uid://dpesa351jtslq" path="res://Assets/textures/floor1.png" id="3_sj838"]
+[ext_resource type="Texture2D" uid="uid://5n0ihx0wywol" path="res://Assets/textures/wall2.png" id="3_t40qk"]
+[ext_resource type="Material" uid="uid://b5wb07proo8oa" path="res://Assets/textures/new_standard_material_3d.tres" id="6_sf6ys"]
+[ext_resource type="Texture2D" uid="uid://xennqte1sfu3" path="res://Assets/textures/floor.png" id="7_fdwry"]
+[ext_resource type="Texture2D" uid="uid://co2kvd4ig84ha" path="res://Assets/textures/roof.png" id="8_cp0hf"]
+[ext_resource type="Texture2D" uid="uid://dwr7dais32tvl" path="res://floor.png" id="9_thdmv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4qoq"]
 sky_top_color = Color(1.92523e-07, 0.282369, 0.355272, 1)
@@ -15,6 +21,8 @@ ground_horizon_color = Color(0.75, 0.820592, 0.838818, 1)
 
 [sub_resource type="Sky" id="Sky_4o0da"]
 sky_material = SubResource("ProceduralSkyMaterial_x4qoq")
+process_mode = 1
+radiance_size = 2
 
 [sub_resource type="Environment" id="Environment_flujk"]
 background_mode = 2
@@ -22,31 +30,79 @@ sky = SubResource("Sky_4o0da")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aw4uc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_feuhp"]
 albedo_texture = ExtResource("1_gvn5r")
 uv1_triplanar = true
 uv1_world_triplanar = true
-uv2_triplanar = true
-uv2_world_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nefav"]
-diffuse_mode = 2
-specular_mode = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bemyr"]
+albedo_texture = ExtResource("3_sj838")
+uv1_scale = Vector3(0.64, 0.64, 0.64)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m3tn"]
+albedo_texture = ExtResource("3_sj838")
+uv1_scale = Vector3(0.615, 0.615, 0.615)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wyeoy"]
+albedo_texture = ExtResource("3_sj838")
+uv1_scale = Vector3(0.59, 0.59, 0.59)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bdmq"]
 albedo_texture = ExtResource("3_knlf1")
-albedo_texture_force_srgb = true
-uv1_scale = Vector3(-0.315, -0.315, -0.315)
-uv1_offset = Vector3(0.48, 0.53, 0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5r1t"]
+albedo_color = Color(0.387978, 0.243282, 0.12349, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kylb"]
+albedo_texture = ExtResource("3_t40qk")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.255, 0.255, 0.255)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h42yw"]
+albedo_texture = ExtResource("7_fdwry")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oft1a"]
+albedo_texture = ExtResource("8_cp0hf")
+uv1_scale = Vector3(0.455, 0.455, 0.455)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3p1g"]
+albedo_texture = ExtResource("9_thdmv")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqddc"]
+albedo_texture = ExtResource("3_sj838")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdm4u"]
+albedo_texture = ExtResource("7_fdwry")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [node name="main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.29404, -0.651849, -0.699023, 0, 0.731354, -0.681998, 0.955793, 0.200535, 0.215048, 0, 0, 0)
+transform = Transform3D(0.293498, -0.93098, -0.217106, -0.000868528, 0.226848, -0.97393, 0.955959, 0.286035, 0.065771, -47.8606, 36.6495, -115.795)
 light_color = Color(0.972549, 0.670588, 0, 1)
-light_energy = 1.444
-light_indirect_energy = 1.556
-light_volumetric_fog_energy = 2.125
+light_energy = 0.23
+light_indirect_energy = 2.996
+light_volumetric_fog_energy = 0.415
 light_angular_distance = 51.25
 light_cull_mask = 4294966273
 
@@ -59,21 +115,116 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239014, 0, -0.264496)
 [node name="Stage" type="Node3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stage"]
-transform = Transform3D(168.312, 0, 0, 0, 2.15566, 0, 0, 0, 168.312, 0, -1.05254, 0)
-material_override = SubResource("StandardMaterial3D_aw4uc")
+transform = Transform3D(229.308, 0, 0, 0, 1, 0, 0, 0, 219.307, 0, -0.383968, 0)
+material_override = SubResource("StandardMaterial3D_feuhp")
 use_collision = true
 
 [node name="alamo4" parent="Stage" instance=ExtResource("1_ilgbr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11743, 0, 47.205)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131914, 0.126323, 47.205)
 
-[node name="Plane_002" parent="Stage/alamo4" index="9"]
-visible = false
+[node name="Plane" parent="Stage/alamo4" index="0"]
+material_override = SubResource("StandardMaterial3D_bemyr")
 
-[node name="Plane_007" parent="Stage/alamo4" index="10"]
+[node name="Plane_005" parent="Stage/alamo4" index="1"]
+material_override = SubResource("StandardMaterial3D_4m3tn")
+
+[node name="Plane_006" parent="Stage/alamo4" index="2"]
+material_override = SubResource("StandardMaterial3D_wyeoy")
+
+[node name="Plane_003" parent="Stage/alamo4" index="3"]
+material_override = SubResource("StandardMaterial3D_5bdmq")
+
+[node name="Cylinder_013" parent="Stage/alamo4" index="4"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder" parent="Stage/alamo4/Cylinder_013" index="0"]
+transform = Transform3D(0.982789, -1.35667e-05, 0.184731, 0.000449516, 0.76228, -0.00229513, -0.184731, 0.00178273, 0.982786, -20.281, -0.211164, -21.5657)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_001" parent="Stage/alamo4/Cylinder_013" index="1"]
+transform = Transform3D(0.959859, -1.35667e-05, 0.280482, 0.000673037, 0.76228, -0.0022398, -0.280481, 0.00178273, 0.959857, -20.8398, -0.205383, -23.7727)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_002" parent="Stage/alamo4/Cylinder_013" index="2"]
+transform = Transform3D(0.945367, -1.35667e-05, 0.326006, 0.000779247, 0.76228, -0.0022051, -0.326006, 0.00178273, 0.945365, -21.5823, -0.199743, -25.9277)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_003" parent="Stage/alamo4/Cylinder_013" index="3"]
+transform = Transform3D(0.920075, 0, 0.391742, 0, 0.762282, 0, -0.391742, 0, 0.920075, -22.445, -0.186935, -28.0303)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_004" parent="Stage/alamo4/Cylinder_013" index="4"]
+transform = Transform3D(0.920075, 0, 0.391742, 0, 0.762282, 0, -0.391742, 0, 0.920075, -23.3499, -0.186935, -30.1192)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_005" parent="Stage/alamo4/Cylinder_013" index="5"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_006" parent="Stage/alamo4/Cylinder_013" index="6"]
+transform = Transform3D(0.894803, 0, 0.44646, 0, 0.762282, 0, -0.44646, 0, 0.894803, -25.2384, -0.186935, -34.275)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_007" parent="Stage/alamo4/Cylinder_013" index="7"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_008" parent="Stage/alamo4/Cylinder_013" index="8"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_009" parent="Stage/alamo4/Cylinder_013" index="9"]
+transform = Transform3D(0.902409, 0.000287407, 0.43088, 0.00110543, 0.762277, -0.00319018, -0.430878, 0.00255757, 0.902404, -28.4617, -0.162042, -40.346)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_010" parent="Stage/alamo4/Cylinder_013" index="10"]
+transform = Transform3D(0.995241, 0.000306738, 0.097448, -2.70096e-05, 0.762276, -0.00385345, -0.0974488, 0.00292142, 0.995233, -29.0502, -0.157764, -42.5226)
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_011" parent="Stage/alamo4/Cylinder_013" index="11"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_012" parent="Stage/alamo4/Cylinder_013" index="12"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_014" parent="Stage/alamo4/Cylinder_013" index="13"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_015" parent="Stage/alamo4/Cylinder_013" index="14"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_016" parent="Stage/alamo4/Cylinder_013" index="15"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Cylinder_017" parent="Stage/alamo4/Cylinder_013" index="16"]
+material_override = SubResource("StandardMaterial3D_l5r1t")
+
+[node name="Plane_008" parent="Stage/alamo4" index="5"]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 7.50726, -0.33601, -37.8671)
+material_override = SubResource("StandardMaterial3D_1kylb")
+
+[node name="Plane_010" parent="Stage/alamo4" index="7"]
 transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.533928, 0, -36.9568)
+material_override = ExtResource("6_sf6ys")
 
-[node name="Plane_008" parent="Stage/alamo4" index="14"]
-material_override = SubResource("StandardMaterial3D_nefav")
+[node name="Plane_011" parent="Stage/alamo4" index="8"]
+material_override = ExtResource("6_sf6ys")
+
+[node name="Plane_013" parent="Stage/alamo4" index="10"]
+material_override = SubResource("StandardMaterial3D_h42yw")
+
+[node name="Plane_014" parent="Stage/alamo4" index="11"]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.533928, 0, -36.9568)
+material_override = SubResource("StandardMaterial3D_oft1a")
+
+[node name="Plane_004" parent="Stage/alamo4" index="12"]
+material_override = SubResource("StandardMaterial3D_f3p1g")
+
+[node name="Plane_016" parent="Stage/alamo4" index="13"]
+material_override = SubResource("StandardMaterial3D_fqddc")
+
+[node name="Plane_015" parent="Stage/alamo4" index="14"]
+material_override = ExtResource("6_sf6ys")
+
+[node name="Plane_001" parent="Stage/alamo4" index="15"]
+material_override = SubResource("StandardMaterial3D_mdm4u")
 
 [node name="18pnd cannon col" parent="Stage" instance=ExtResource("3_jm6pa")]
 transform = Transform3D(-1.84735, 0, -0.186116, 0, 1.8567, 0, 0.186116, 0, -1.84735, 59.5726, 3.0076, 25.765)
@@ -82,5 +233,3 @@ transform = Transform3D(-1.84735, 0, -0.186116, 0, 1.8567, 0, 0.186116, 0, -1.84
 transform = Transform3D(0.931454, 0, 0, 0, 0.931454, 0, 0, 0, 0.931454, -26.5538, 2.74808, 12.9706)
 
 [editable path="Stage/alamo4"]
-[editable path="Stage/alamo4/treescol"]
-[editable path="Stage/alamo4/treescol2"]

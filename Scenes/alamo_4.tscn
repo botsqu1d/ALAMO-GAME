@@ -1,27 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://gm4l1catwqj2"]
+[gd_scene load_steps=2 format=3 uid="uid://gm4l1catwqj2"]
 
 [ext_resource type="PackedScene" uid="uid://551w88qnuob1" path="res://Assets/alamo4.blend" id="1_jwiwn"]
-[ext_resource type="PackedScene" uid="uid://dk4yjmo1ms081" path="res://Assets/treescol.blend" id="2_xrn57"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tbig"]
-albedo_color = Color(0.521569, 0.321569, 0.231373, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7v5l"]
-albedo_color = Color(0.520292, 0.321203, 0.230515, 1)
 
 [node name="alamo4" instance=ExtResource("1_jwiwn")]
-
-[node name="treescol" parent="." index="0" instance=ExtResource("2_xrn57")]
-transform = Transform3D(-0.987576, 0, -0.157141, 0, 1, 0, 0.157141, 0, -0.987576, 3.44494, -9.53674e-07, 47.8553)
-
-[node name="tree" parent="treescol" index="1"]
-material_override = SubResource("StandardMaterial3D_1tbig")
-
-[node name="treescol2" parent="." index="1" instance=ExtResource("2_xrn57")]
-transform = Transform3D(-0.877883, 0, -0.478876, 0, 1, 0, 0.478876, 0, -0.877883, 20.2906, 0, 39.2398)
-
-[node name="tree" parent="treescol2" index="1"]
-material_override = SubResource("StandardMaterial3D_o7v5l")
-
-[editable path="treescol"]
-[editable path="treescol2"]
